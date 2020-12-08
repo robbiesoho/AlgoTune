@@ -1,6 +1,20 @@
+body {
+  background: #222222;
+}
+
 .App {
   text-align: center;
 }
+
+#login-form {
+  background: #EEEEEE;
+  padding: 15px 20px 15px;
+  border-radius: 30px;
+}
+
+/* label {
+  color: #EEEEEE;
+} */
 
 .App-logo {
   height: 40vmin;
