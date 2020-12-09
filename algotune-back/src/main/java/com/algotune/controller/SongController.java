@@ -1,5 +1,7 @@
 package com.algotune.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,25 +9,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.algotune.model.Songs;
 import com.algotune.model.User;
-import com.algotune.model.dto.UserDto;
-import com.algotune.service.UserService;
+import com.algotune.service.SongService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/song")
+public class SongController {
 
 	@Autowired
-	public UserService us;
+	private SongService ss;
 	
-	@PostMapping("/create")
-	public String create(@RequestBody User user) {
-		return us.save(user);
+	@PostMapping("/save")
+	public String saveSong(@RequestBody Songs song) {
+		return ss.saveSong(song);
 	}
 	
-	@PostMapping("/verify")
-	public boolean verifyUser(@RequestBody UserDto ud) {
-		return us.verifyUser(ud.getEmail(), ud.getPassword());
+	@PostMapping("/")
+	public List<Songs> getAllSongsByUser(@RequestBody User user){
+		return ss.getAllSongsByUser(user);
 	}
 }

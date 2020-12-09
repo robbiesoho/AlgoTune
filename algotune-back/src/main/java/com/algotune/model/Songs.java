@@ -24,7 +24,9 @@ public class Songs {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int melodyId;
+	private int songId;
+	
+	private String title;
 	
 	private int[] harmony;
 	
