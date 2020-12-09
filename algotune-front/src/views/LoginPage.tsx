@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LoginComponent } from '../components/LoginComponent';
 
-interface IProps {
+export const LoginPage: React.FC<any> = () => {
 
-}
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-export const LoginPage: React.FC<IProps> = (props: IProps) => {
     return (
         <div>
             <br/>
@@ -13,7 +13,13 @@ export const LoginPage: React.FC<IProps> = (props: IProps) => {
             <br/>
             <br/>
             <br/>
-            <LoginComponent/>
+            <LoginComponent setEmail={setEmail} setPassword={setPassword}/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Email: {email} Password: {password}</h1>
         </div>
     )
 }
