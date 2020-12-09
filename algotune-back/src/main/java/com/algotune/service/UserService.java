@@ -1,5 +1,7 @@
 package com.algotune.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,9 @@ public class UserService {
 			verified =  false;
 		}
 		return verified;
+	}
+	
+	public List<User> getAllUsers(){
+		return ur.findAll();
 	}
 }
