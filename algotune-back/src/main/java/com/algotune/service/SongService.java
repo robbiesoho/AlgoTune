@@ -39,4 +39,8 @@ public class SongService {
 			return new ArrayList<>();
 		}
 	}
+	
+	public List<Songs> getAllSongs(){
+		return sr.findAll();
+	}
 }
